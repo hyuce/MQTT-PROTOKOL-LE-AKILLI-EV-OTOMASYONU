@@ -1,0 +1,13 @@
+# This is the Publisher
+#--coding:utf-8--
+import paho.mqtt.client as mqtt
+
+x = input("Lamba yakmak icin  1'e  sondurmek icin  0'a  basiniz : ")
+if (x == 1):
+        print "Lamba yanik"
+if (x == 0):
+        print "Lamba sonuk"
+client = mqtt.Client()
+client.connect("iot.eclipse.org",1883,10)
+client.publish("Lamba", x);
+client.disconnect();
